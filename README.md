@@ -151,7 +151,7 @@ The larger project addresses a specific gap: most AI governance content is writt
 
 This skill emerged from a practical problem encountered repeatedly across regulated environments: AI tools being adopted into security workflows with no framework for evaluating false-positive risk, chain-of-custody implications, or regulatory exposure. Rather than write another policy about it, I built the tool.
 
-**Connect:** [LinkedIn](https://linkedin.com/in/[add-handle]) · [AI Risk Assessment Template repo](https://github.com/CavenderProjects/ai-risk-assessment-template) *(coming)*
+**Connect:** [LinkedIn](https://linkedin.com/in/christopher-cavender-cissp) · [AI Risk Assessment Template repo](https://github.com/CavenderProjects/ai-risk-assessment-template) *(coming)*
 
 ---
 
