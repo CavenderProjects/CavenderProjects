@@ -1,172 +1,46 @@
-# AI-Augmented Pen Test Triage — Claude Code Skill
+# Christopher Cavender: AI Governance & Information Security
 
-> A Claude Code skill that augments penetration testing and vulnerability assessment workflows in regulated environments. Built and maintained by a senior information security professional with 20 years of GRC and security management experience across financial services, healthcare, and real estate.
-
----
-
-## What This Does
-
-Security assessments generate noise. Regulated environments generate liability. This skill bridges both.
-
-It augments the **triage and documentation phase** of penetration test and vulnerability assessment workflows by:
-
-- **Classifying findings** by severity and regulatory exposure — HIPAA, PCI-DSS, NYDFS, GDPR, CPRA, SOX, NIST CSF
-- **Evaluating false-positive risk** based on system context, business criticality, and compensating controls
-- **Generating chain-of-custody-aware documentation** suitable for regulated-environment audit trails
-- **Translating technical findings** into risk language for business stakeholders, compliance audiences, and executive reporting
-- **Flagging remediation vs. risk-acceptance decisions** based on regulatory requirements and business constraints
+**CISSP · CCSP · IAPP AIGP (in progress)**
+AI Governance & Risk | NIST AI RMF · ISO 42001 · EU AI Act | 20 years regulated-industry GRC
+Livingston, NJ | Open to NJ/NYC roles
 
 ---
 
-## Why It Exists
+## What I Build Here
 
-Standard pen test reports are written for engineers. They get handed to compliance teams, business leaders, and auditors who need to make risk decisions — fast — in language they can act on.
+GRC and information security leader applying 20 years of regulated-industry experience to AI governance. Most AI governance content is written for AI engineers or compliance theorists. The tools in this portfolio are built for practitioners who have to operationalize AI governance inside real organizations, with real regulatory exposure, real vendor contracts, and real audit timelines.
 
-After 11 years managing GRC programs across industries where a misclassified finding can mean a HIPAA violation or a PCI audit failure, I built this skill to do what I was doing manually: translate technical security findings into business risk language without losing the technical accuracy that makes the translation credible.
-
-It also addresses a gap I kept hitting in regulated environments: **most AI-assisted security tools have no concept of chain-of-custody**. When a finding is used in an audit response, a board presentation, or a regulatory submission, the trail from raw scanner output to final risk position needs to be defensible. This skill documents that trail.
-
----
-
-## Regulated Environment Considerations
-
-This skill was designed with three regulated-environment constraints that most security tooling ignores:
-
-### 1. False-Positive Risk
-In regulated environments, a false positive isn't just wasted time — it can trigger unnecessary remediation spend, create misleading audit artifacts, or generate erroneous risk exceptions that become permanent record. The skill prompts explicit false-positive evaluation before any finding is documented as confirmed.
-
-### 2. Chain-of-Custody Documentation
-Any finding that may surface in an audit response, regulatory submission, or board-level risk report needs a clear record of: who assessed it, what context was applied, what compensating controls were considered, and what the final risk position is. The skill produces output structured for this trail.
-
-### 3. Business-Constraint Remediation
-Many findings in production regulated environments **cannot be remediated in isolation** — a vulnerability in a critical-care device, a legacy system under a multi-year vendor contract, or an integration that a business unit depends on for revenue. The skill handles the risk-acceptance workflow, not just the remediation workflow.
-
----
-
-## Skill Structure
-
-```
-pen-test-triage/
-├── SKILL.md                          # Claude Code skill instructions (the core prompt)
-├── README.md                         # This file
-├── templates/
-│   ├── finding-triage-template.md    # Structured triage output format
-│   ├── chain-of-custody-log.md       # Audit-trail documentation template
-│   └── risk-acceptance-memo.md       # Risk acceptance record for regulated environments
-├── examples/
-│   ├── sample-web-app-triage.md      # Example: web application vulnerability triage
-│   ├── sample-network-triage.md      # Example: network infrastructure finding
-│   └── sample-hipaa-context.md       # Example: HIPAA-regulated environment classification
-└── docs/
-    ├── regulatory-mapping.md         # Finding severity → regulatory exposure mapping
-    └── usage-guide.md               # How to use the skill effectively
-```
-
----
-
-## How to Use
-
-### Prerequisites
-- [Claude Code](https://docs.claude.ai/en/docs/claude-code/getting-started) installed
-- Basic familiarity with running skills in Claude Code
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/CavenderProjects/pen-test-triage.git
-
-# Copy the skill into your Claude Code skills directory
-cp -r pen-test-triage/SKILL.md ~/.claude/skills/pen-test-triage/
-
-# Or on Windows (PowerShell):
-Copy-Item -Recurse pen-test-triage\SKILL.md "$env:APPDATA\Claude\skills\pen-test-triage\"
-```
-
-### Invoking the Skill
-
-In Claude Code, trigger the skill with:
-
-```
-/pen-test-triage
-```
-
-Then provide:
-1. The raw finding text (from scanner output, manual test notes, or a prior report)
-2. System context (what the system does, who uses it, what data it handles)
-3. Regulatory environment (HIPAA, PCI, NYDFS, etc. — or "general corporate")
-4. Business constraint context (any known constraints on remediation)
-
-### Example Input
-
-```
-Finding: Outdated TLS version (TLS 1.0) detected on payment processing endpoint.
-System: Legacy order management system integrated with payment gateway. Cannot be
-        updated until contract renewal in Q3 2027.
-Regulatory environment: PCI-DSS 4.0, SOX-adjacent financial controls
-Business constraint: Vendor dependency; unilateral update not possible
-```
-
-### Example Output Structure
-
-The skill produces a structured triage record including:
-- **Confirmed/False Positive determination** with reasoning
-- **Severity classification** (Critical/High/Medium/Low) with regulatory exposure context
-- **Remediation options** ranked by feasibility given stated constraints
-- **Risk acceptance documentation** if remediation is not feasible
-- **Audit-ready language** for compliance reporting
-
----
-
-## Limitations and Honest Caveats
-
-This is a **workflow augmentation tool**, not an autonomous security assessment engine.
-
-- It does not perform scanning, probing, or discovery — it assists with the triage and documentation of findings already identified by the assessor
-- Output requires review by a qualified security professional before use in any regulatory or audit context
-- False-positive evaluation is only as good as the context provided — garbage in, garbage out
-- It does not replace legal review for risk acceptance decisions with significant regulatory exposure
-
----
-
-## Part of a Broader AI Governance Practice Portfolio
-
-This skill is the first published artifact in a broader AI governance project portfolio being built in 2026.
-
-| Artifact | Status | Description |
-|----------|--------|-------------|
-| **Pen Test Triage Skill** (this repo) | Live | Claude Code skill for regulated-environment security assessment augmentation |
-| **AI Risk Assessment Template** | In progress | Maps NIST AI RMF + ISO 42001 controls to GRC framework language enterprises already use |
-| **AI Vendor Risk Questionnaire** | In progress | 25-question due diligence framework for evaluating third-party AI vendors; fills the gap left by pre-2023 contracts with no AI clause |
-
-The larger project addresses a specific gap: most AI governance content is written for either AI engineers (too technical for GRC teams) or compliance audiences (too theoretical for practitioners). These tools are built for the people who have to operationalize AI governance inside real organizations with real regulatory exposure.
+| Repository | Status | What It Is |
+|---|---|---|
+| [pen-test-triage](https://github.com/CavenderProjects/pen-test-triage) | Live | Claude Code skill for AI-augmented pen test triage in regulated environments: false-positive evaluation, chain-of-custody documentation, risk-acceptance workflow |
+| [ai-risk-assessment-template](https://github.com/CavenderProjects/ai-risk-assessment-template) | In progress | Maps NIST AI RMF + ISO 42001 controls to GRC language enterprises already use |
+| ai-vendor-risk-questionnaire | In progress | 25-question due diligence framework for AI vendors; fills the gap left by pre-2023 contracts with no AI clause |
 
 ---
 
 ## Background
 
-**Christopher Cavender, CISSP, CCSP | IAPP AIGP (in progress)**
+- **11 years managing GRC programs** across financial services, healthcare, and real estate
+- **Business Information Security Officer** at Anywhere Real Estate (Fortune 500): 100% pen test and audit finding closure rate across 30 months; cut time-to-market on new product launches ~30% as security/business liaison
+- **Vendor Risk Manager**: built enterprise-wide TPRM program; 70% reduction in assessment time, 40% throughput increase without additional headcount
+- **CISSP + CCSP**: IAPP AIGP exam scheduled Q3 2026
+- Currently studying: NIST AI RMF 1.0 + Generative AI Profile (600-1), ISO/IEC 42001, EU AI Act (full enforcement August 2026)
 
-20 years in information security and GRC. Former Business Information Security Officer at Anywhere Real Estate (Fortune 500); 11 years managing security programs across financial services, healthcare, and real estate. Currently Information Systems Security Manager at Tripoint Solutions. NJ/NYC.
-
-This skill emerged from a practical problem encountered repeatedly across regulated environments: AI tools being adopted into security workflows with no framework for evaluating false-positive risk, chain-of-custody implications, or regulatory exposure. Rather than write another policy about it, I built the tool.
-
-**Connect:** [LinkedIn](https://linkedin.com/in/christopher-cavender-cissp) · [AI Risk Assessment Template repo](https://github.com/CavenderProjects/ai-risk-assessment-template) *(coming)*
-
----
-
-## Contributing
-
-Contributions welcome — especially from practitioners working in regulated environments with specific HIPAA, NYDFS, PCI, or EU AI Act context to add. Open an issue or submit a PR.
+The background that makes these tools useful: I've been in the room when a security finding became a board-level risk decision, when an audit finding needed to be translated into a business case, and when a vendor contract created regulatory exposure no one anticipated. These tools reflect those situations.
 
 ---
 
-## License
+## Writing
 
-MIT License. Use freely. Attribution appreciated but not required.
+Published on LinkedIn about the gap between AI governance frameworks and operational GRC practice:
 
-If you use this in a regulated environment and find something that needs fixing, please open an issue — that feedback directly improves the tool.
+- *You Have a Policy. You Don't Have Governance.* - published May 2026
+- *The AI You Built* (Part 1 of 4) - published May 2026
+- *Translating NIST AI RMF into GRC Language Auditors Already Use* - in progress
+- *What 11 Years of Vendor Risk Management Taught Me About AI Vendor Risk* - in progress
 
 ---
 
-*Built May 2026 · Part of an active AI governance practice portfolio*
+## Connect
+
+[LinkedIn](https://linkedin.com/in/christopher-cavender-cissp) · Cavender@gmail.com · (973) 943-9917
