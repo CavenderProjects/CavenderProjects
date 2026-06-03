@@ -12,7 +12,7 @@ GRC and information security leader applying 20 years of regulated-industry expe
 
 | Repository | Status | What It Is |
 |---|---|---|
-| [pen-test-triage](https://github.com/CavenderProjects/pen-test-triage) | Live | Claude Code skill for AI-augmented pen test triage in regulated environments: false-positive evaluation, chain-of-custody documentation, risk-acceptance workflow |
+| [pen-test-triage](https://github.com/CavenderProjects/pen-test-triage) | Live | Claude Code skill for AI-augmented pen test triage in regulated environments: false-positive evaluation, remediation assistance documentation, risk-acceptance workflow |
 | [ai-risk-assessment-template](https://github.com/CavenderProjects/ai-risk-assessment-template) | In progress | Maps NIST AI RMF + ISO 42001 controls to GRC language enterprises already use |
 | ai-vendor-risk-questionnaire | In progress | 25-question due diligence framework for AI vendors; fills the gap left by pre-2023 contracts with no AI clause |
 
