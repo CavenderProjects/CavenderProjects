@@ -1,6 +1,6 @@
 # Multi-Modal Vulnerability Scanner
 
-> A regulated-environment security assessment platform built and maintained by a senior information security professional with 20 years of GRC and security management experience across financial services, healthcare, and real estate.
+> A security assessment platform built and maintained by a senior information security professional with 20 years of GRC and security management experience across financial services, healthcare, and real estate.
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Version | Repo | What It Is |
 |---------|------|------------|
-| **Claude Code Skill** | [pen-test-triage](https://github.com/CavenderProjects/pen-test-triage) | AI-augmented assessment workflows inside Claude Code — no installation, runs wherever Claude Code runs |
+| **Claude Code Skill** | [Multi Modal Scanner](https://github.com/CavenderProjects/Multi-Modal-Scanner)) | AI-augmented assessment workflows inside Claude Code — no installation, runs wherever Claude Code runs |
 | **Standalone App** | [pen-tester-standalone](https://github.com/CavenderProjects/pen-tester-standalone) | Full PyQt6 desktop application — runs independently, no Claude Code required, persistent scan history, offline capable |
 
 Both versions share the same controls libraries, compliance framework mappings, and report format. The standalone app is the production-ready version of the scanner with a full GUI, database-backed scan history, and an interactive report review interface.
